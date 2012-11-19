@@ -29,7 +29,7 @@ class Net1_edge (models.Model):
     addr2 = models.CharField(max_length=34)
     
 class Net2_edge (models.Model):
-    from_user = models.ForeignKey(User, blank=True,null=True)
-    to_user = models.ForeignKey(User, blank=True,null=True)
+    from_user = models.ForeignKey(User, related_name="user_from")
+    to_user = models.ForeignKey(User,related_name="user_to")
     val = models.BigIntegerField()
 
