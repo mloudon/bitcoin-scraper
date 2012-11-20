@@ -1,6 +1,6 @@
 from bitcoinapp.models import Net2_edge
 
-FILENAME = "/home/mel/Documents/2012-2013/COMM 645/paper/edges_net2.ncol"
+FILENAME = "/home/mel/Documents/2012-2013/COMM 645/paper/edges_net2_2.ncol"
 
 def main():
     out = open(FILENAME,"w")
