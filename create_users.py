@@ -1,6 +1,6 @@
 from bitcoinapp.models import User, Address
 
-FILENAME = "/home/mel/Documents/2012-2013/COMM 645/paper/nodes.txt"
+FILENAME = "/home/mel/Documents/2012-2013/COMM 645/paper/nodes_2.txt"
 
 def read_components_from_file():
     infile = open(FILENAME,"r")

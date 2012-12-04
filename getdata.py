@@ -39,8 +39,9 @@ def get_tx_for_block(hash):
     txarr = json.loads(txjson)
     
     for txdata in txarr["tx"]:
-        tx=Transaction.objects.create(hash=txdata["hash"],block=curblock)
-        tx.save()
+        tx, saved=Transaction.objects.get_or_create(hash=txdata["hash"],block=curblock)
+        if (created):
+            tx.save()
         
         for tx_in in txdata["inputs"]:
             if len(tx_in)>0:

@@ -2,6 +2,11 @@ from django.db import models
 
 class User (models.Model):
     userid=models.BigIntegerField()
+    username = models.CharField(max_length=200,blank=True,null=True)
+    profileurl = models.URLField(blank=True,null=True)
+    numposts = models.IntegerField(blank=True,null=True)
+    date_reg = models.DateField(blank=True,null=True)
+    date_last = models.DateField(blank=True, null=True)
 
 class Address (models.Model):
     val = models.CharField(max_length=34,unique=True)
@@ -13,7 +18,7 @@ class Block (models.Model):
     
 class Transaction (models.Model):
     hash = models.CharField(max_length=1000,unique=True)
-    block = models.ForeignKey(Block)
+    block = models.ForeignKey(Block, blank=True,null=True)
     
 class Tx_input (models.Model):
     address = models.ForeignKey(Address)
