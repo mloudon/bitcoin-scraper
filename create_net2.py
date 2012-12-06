@@ -13,7 +13,7 @@ def main():
             for tx_out in tx.tx_output_set.filter(amount__lte=500000000):
                 user2=tx_out.address.user
                 amount=tx_out.amount
-                if user2.username:
+                if user2.username and user1.username:
                     edge = Net2_edge.objects.create(from_user=user1,to_user=user2,val=amount)
                     edge.save()
             i+=1
