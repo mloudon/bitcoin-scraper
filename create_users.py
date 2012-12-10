@@ -19,7 +19,7 @@ def read_components_from_file():
         addresses = line.split(",")
         print '%d addresses for user %d' % (len(addresses),user.userid)
         for addrhash in addresses:
-            print addrhash
+            #print addrhash
             addr=Address.objects.get(val__exact=addrhash)
             addr.user=user
             addr.save()
@@ -38,7 +38,7 @@ def create_users_for_orphan_addresses():
 
 
 def main():
-    #read_components_from_file()
+    read_components_from_file()
     create_users_for_orphan_addresses()
 
 if __name__ == "__main__":

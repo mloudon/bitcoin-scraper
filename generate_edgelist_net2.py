@@ -4,7 +4,7 @@ EDGELIST = "/home/mel/Documents/2012-2013/COMM 645/paper/edges_net2_forumusers_o
 NODEATTRS = "/home/mel/Documents/2012-2013/COMM 645/paper/attrs_forumusers.ncol"
 
 def main():
-    #edgelist()
+    edgelist()
     attrs()
     
 def edgelist():

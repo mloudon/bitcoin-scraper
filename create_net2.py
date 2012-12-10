@@ -10,10 +10,11 @@ def main():
             
             #assume all inputs have the same user since this is how users were created
             user1 = tx_in.address.user
+            
             for tx_out in tx.tx_output_set.filter(amount__lte=500000000):
                 user2=tx_out.address.user
-                amount=tx_out.amount
-                if user2.username and user1.username:
+                if (user1!=user2):
+                    amount=tx_out.amount
                     edge = Net2_edge.objects.create(from_user=user1,to_user=user2,val=amount)
                     edge.save()
             i+=1
